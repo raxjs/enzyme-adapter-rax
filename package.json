@@ -10,7 +10,6 @@
     "build": "node ./scripts/compile-packages.js",
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./",
     "lint-fix": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./ --fix",
-    "test": "jest --logHeapUsage --detectOpenHandles",
     "check-and-publish": "npm install && npm run build && node ./scripts/check-and-publish.js"
   },
   "repository": {
@@ -54,7 +53,6 @@
     "eslint-plugin-react": "~7.11.1",
     "findup": "^0.1.5",
     "glob": "^7.1.6",
-    "jest": "^24.9.0",
     "minimatch": "^3.0.4",
     "minimist": "^1.2.0",
     "rax": "^1.0.0",
@@ -73,11 +71,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "jest": {
-    "collectCoverage": true,
-    "setupFiles": [
-      "<rootDir>/node_modules/regenerator-runtime/runtime"
-    ]
   }
 }
