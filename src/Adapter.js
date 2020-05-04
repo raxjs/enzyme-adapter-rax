@@ -5,7 +5,7 @@ import isValidElement from 'rax-is-valid-element';
 import { EnzymeAdapter } from 'enzyme';
 import createMountWrapper from './createMountWrapper';
 import RootFinder from './RootFinder';
-import DriverDOM from 'driver-dom';
+import * as DriverDOM from 'driver-dom';
 import { isArrayLike, mapFind, flatten, ensureKeyOrUndefined } from './utils';
 import { CURRENT_ELEMENT, INSTANCE, INTERNAL, RENDERED_COMPONENT, RENDERED_CHILDREN, HOST_NODE } from './constants';
 
@@ -388,7 +388,9 @@ class RaxAdapter extends EnzymeAdapter {
   }
 
   nodeToHostNode(node) {
-    return findDOMNode(node.instance[INTERNAL]);
+    const instance = node.instance;
+    const hostNode = instance[INTERNAL][HOST_NODE];
+    return findDOMNode(hostNode ? hostNode : instance);
   }
 
   isValidElement(element) {
