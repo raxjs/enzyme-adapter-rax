@@ -1,6 +1,6 @@
 {
   "name": "enzyme-adapter-rax",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Enzyme adapter for Rax",
   "main": "lib/index.js",
   "module": "es/index.js",
